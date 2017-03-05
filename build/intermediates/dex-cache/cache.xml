@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.1.1_8c8196bc8ba86bdcd1323d15a2f0ddec6719117c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.1_06c12e423dd230b1b9bbbe10788f3a17fb5677f7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="733c2d3147f63942cd8f41b992617ba77d9f268d">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7b31fc86a4374ecf141fa76c379ed37490aaf576\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_813b0f5a77d80f4e03b6dffe54f80c0a09c1294b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="9c89def5f3016e049fb524b456344c8b7108ade4">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_2ed67b6668cf26e2f42695d6fee232a04600e489\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.1.1_e5aa53eaa0d45a844694b2f9e882d9f651f25d87\classes.dex" />
+    </item>
+    <item
+        jar="S:\SDK_JAVA_Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.1.1_3edf9ba453f5e9f48c8d817d2819c6b1baa9be72\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\exploded-aar\com.android.support\design\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.1.1_55a4e9d324d330ccbb1ce3ea2fe199a87a832173\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_2870175be032de369cae1aeda8000aaaccfd5ed6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\Users\Alex.he\Desktop\IngooMe\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_7c795934df0d30fe2de5796e1d3ad7299967c830\classes.dex" />
+    </item>
+
+</items>
