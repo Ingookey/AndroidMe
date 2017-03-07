@@ -2,6 +2,8 @@ package com.ingoo.ingoos;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,7 +12,11 @@ import com.ingoo.ingoos.utils.AppUtil;
 
 
 public class MainActivity extends Activity {
-	private static String TAG = "ingoo/MainActivity";
+	public static String TAG = "ingoo/MainActivity";
+	
+	public static int MSG_ITEM1 = 1; 
+	
+	private SyncHandler mSyncHandler = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,10 @@ public class MainActivity extends Activity {
 		Log.w(TAG, "<onCreate> begin");
 		setContentView(R.layout.activity_main);
 		
+		mSyncHandler = new SyncHandler();
+		Message msg = new Message();
+		msg.what = MSG_ITEM1;
+		mSyncHandler.sendMessage(msg);
 		//AppUtil.buildSystemInfo(this);
 	}
 
@@ -34,5 +44,22 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public class SyncHandler extends Handler {
+		public SyncHandler() {  
+	    }  
+	 
+	    @Override  
+	    public void handleMessage(Message msg) {  
+	        super.handleMessage(msg);
+	        switch (msg.what) {
+			case MSG_ITEM1:
+				
+				break;
+			default:
+				break;
+			}
+	    }  
 	}
 }
