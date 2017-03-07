@@ -9,8 +9,20 @@
     tools:context="com.ingoo.ingoos.MainActivity" >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/item1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
+        android:text="今日待办" />
+    <TextView
+        android:id="@+id/item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item1"
+        android:text="任务篮" />
+    <TextView
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item2"
+        android:text="总结" />
 </RelativeLayout>

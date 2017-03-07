@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 		Log.w(TAG, "<onCreate> begin");
 		setContentView(R.layout.activity_main);
 		
-		AppUtil.buildSystemInfo(this);
+		//AppUtil.buildSystemInfo(this);
 	}
 
 	@Override
