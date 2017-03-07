@@ -1,2 +1,0 @@
-# AndroidMe
-Android Me
