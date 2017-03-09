@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.ingoo.ingoos.utils.AppUtil;
 
 
-public class MainActivity extends Activity implements OnClickListener {
+public class IngooActivity extends Activity implements OnClickListener {
 	public static String TAG = "ingoo/MainActivity";
 	
 	private SyncHandler mSyncHandler = null;
