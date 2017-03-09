@@ -12,7 +12,7 @@ public final class LogTime {
 	private static String TAG = "ingoo/LogTime";
 	
 	private static final double MILLIS_MULTIPLIER = Build.VERSION_CODES.JELLY_BEAN_MR1 <= Build.VERSION.SDK_INT
-			? 1d / Math.pow(10, 6) : 1d;
+													? 1d / Math.pow(10, 6) : 1d;
 
 	private LogTime() {
 	}

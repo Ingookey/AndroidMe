@@ -24,9 +24,6 @@ public class IngooActivity extends Activity implements OnClickListener {
 	private Button mButton1;
 	
 	public class SyncHandler extends Handler {
-		public SyncHandler() {  
-	    }  
-	 
 	    @Override
 	    public void handleMessage(Message msg) {
 			Log.d(TAG, "<handleMessage> msg.what: " + msg.what);
