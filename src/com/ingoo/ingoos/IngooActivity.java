@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.ingoo.ingoos.utils.AppUtil;
+import com.ingoo.ingoos.utils.LogTime;
 
 
 public class IngooActivity extends Activity implements OnClickListener {
@@ -47,8 +48,11 @@ public class IngooActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "<onCreate> APP_VERSION: " + IngooHelper.APP_VERSION);
 		setContentView(R.layout.activity_main);
+		
+		long startTime = LogTime.getLogTime();
 		initializeData();
 		setupViews();
+		LogTime.logTimeMsg("onCreate ", startTime);
 		//AppUtil.buildSystemInfo(this);
 	}
 
