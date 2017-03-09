@@ -45,7 +45,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.w(TAG, "<onCreate> begin");
+		Log.d(TAG, "<onCreate> APP_VERSION: " + IngooHelper.APP_VERSION);
 		setContentView(R.layout.activity_main);
 		initializeData();
 		setupViews();
