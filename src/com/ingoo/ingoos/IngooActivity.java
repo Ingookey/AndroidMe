@@ -13,14 +13,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.ingoo.ingoos.thread.ThreadPool;
 import com.ingoo.ingoos.utils.AppUtil;
 import com.ingoo.ingoos.utils.LogTime;
+
+import java.util.concurrent.ThreadPoolExecutor;
 
 
 public class IngooActivity extends Activity implements OnClickListener {
 	public static String TAG = "ingoo/MainActivity";
 	
 	private SyncHandler mSyncHandler = null;
+	private ThreadPoolExecutor mThreadPool;
 	private Button mButton1;
 	
 	public class SyncHandler extends Handler {
@@ -55,6 +59,15 @@ public class IngooActivity extends Activity implements OnClickListener {
 
 	private void initializeData() {
 		mSyncHandler = new SyncHandler();
+		mThreadPool = ThreadPool.getThreadPool();
+		
+		mThreadPool.execute(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				Log.d(TAG, "<run> APP_VERSION: " + IngooHelper.APP_VERSION);
+			}
+		});
 	}
 	
 	private void setupViews() {
