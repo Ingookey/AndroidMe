@@ -6,4 +6,7 @@
     <string name="string_today">今日待办</string>
     <string name="string_todos">任务篮</string>
     <string name="string_summary">总结</string>
+
+    <!-- For item -->
+    <string name="item_button">Detail</string>
 </resources>

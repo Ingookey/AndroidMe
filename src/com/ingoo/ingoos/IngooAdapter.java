@@ -10,6 +10,7 @@ import java.util.List;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -60,16 +61,16 @@ public class IngooAdapter extends BaseAdapter implements OnClickListener {
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
 			convertView = mLayoutInflater.inflate(R.layout.ingoo_item, null);
-			viewHolder.img = (ImageView) convertView.findViewById(R.id.img);
-			viewHolder.title = (TextView) convertView.findViewById(R.id.title);
-			viewHolder.info = (TextView) convertView.findViewById(R.id.info);
-			viewHolder.button = (Button) convertView.findViewById(R.id.basebutton);
+			viewHolder.img = (ImageView) convertView.findViewById(R.id.item_image);
+			viewHolder.title = (TextView) convertView.findViewById(R.id.item_title);
+			viewHolder.info = (TextView) convertView.findViewById(R.id.item_info);
+			viewHolder.button = (Button) convertView.findViewById(R.id.item_button);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		System.out.println("viewHolder = " + viewHolder);
+		Log.d(TAG, "<getView> viewHolder: " + viewHolder);
 		viewHolder.img.setBackgroundResource((Integer) getData().get(position).get("image"));
 		viewHolder.title.setText((CharSequence) getData().get(position).get("title"));
 		viewHolder.info.setText((CharSequence) getData().get(position).get("info"));
@@ -82,15 +83,18 @@ public class IngooAdapter extends BaseAdapter implements OnClickListener {
 	public void onClick(View v) {
 		int id = v.getId();
 		switch (id) {
-		case R.id.basebutton:
-			showInfo();
+		case R.id.item_button:
+			showItemInfo();
 			break;
+		default :
+				break;
 		}
 	}
 	
     private List<HashMap<String, Object>> getData() {
         List<HashMap<String, Object>> maps = new ArrayList<HashMap<String, Object>>();
         HashMap<String, Object> map = new HashMap<String, Object>();
+        
         map.put("image", R.drawable.ingoo_launcher);
         map.put("title", "G1");
         map.put("info", "google 1");
@@ -110,7 +114,7 @@ public class IngooAdapter extends BaseAdapter implements OnClickListener {
         return maps;
     }
 
-	private void showInfo() {
+	private void showItemInfo() {
 		new AlertDialog.Builder(mContext).setTitle("my listview").setMessage("introduce....")
 				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 					@Override

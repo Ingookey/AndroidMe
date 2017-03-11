@@ -5,10 +5,10 @@
     android:orientation="horizontal" >
 
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/item_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5px" >
+        android:layout_margin="5dp" >
     </ImageView>
 
     <LinearLayout
@@ -18,28 +18,28 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:textSize="22px" >
+            android:textSize="@dimen/item_title" >
         </TextView>
 
         <TextView
-            android:id="@+id/info"
+            android:id="@+id/item_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:textSize="13px" >
+            android:textSize="@dimen/item_info" >
         </TextView>
     </LinearLayout>
 
     <Button
-        android:id="@+id/basebutton"
+        android:id="@+id/item_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
         android:focusable="false"
-        android:text="more" />
+        android:text="@string/item_button" />
 
 </LinearLayout>

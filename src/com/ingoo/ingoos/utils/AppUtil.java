@@ -16,11 +16,13 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
 /**
- * App utility for android debug.</br>
+ * Utility for debug system info.
  */
 public final class AppUtil { 
+	public static String TAG = "ingoo/AppUtil";
+
 	private static String sAppName = "";
- 
+
 	public static File getAppCacheDir(Context context, String subName) {
 		if (!sdAvailible()) { 
 			return null; 
