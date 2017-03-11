@@ -16,6 +16,7 @@ public class ThreadPool {
 	private static int mMaxPoolSize = 4;
 	private static int mKeepIdleTime = 3;
 
+	// The singleton thread pool
 	private volatile static ThreadPoolExecutor mThreadPool;
 
 	private ThreadPool() {

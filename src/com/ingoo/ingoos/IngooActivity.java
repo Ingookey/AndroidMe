@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.ingoo.ingoos.thread.ThreadPool;
@@ -19,15 +20,17 @@ import com.ingoo.ingoos.utils.LogTime;
 
 import java.util.concurrent.ThreadPoolExecutor;
 
+import javax.net.ssl.SSLException;
 
-public class IngooActivity extends Activity implements OnClickListener {
+
+public class IngooActivity extends Activity {
 	public static String TAG = "ingoo/MainActivity";
 	
-	private SyncHandler mSyncHandler = null;
+	private MainHandler mMainHandler = null;
 	private ThreadPoolExecutor mThreadPool;
-	private Button mButton1;
+	private ListView mListView;
 	
-	public class SyncHandler extends Handler {
+	public class MainHandler extends Handler {
 	    @Override
 	    public void handleMessage(Message msg) {
 			Log.d(TAG, "<handleMessage> msg.what: " + msg.what);
@@ -48,30 +51,34 @@ public class IngooActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "<onCreate> APP_VERSION: " + IngooHelper.APP_VERSION);
-		setContentView(R.layout.activity_main);
-		
+
 		long startTime = LogTime.getLogTime();
+		setContentView(R.layout.ingoo_outlook);
+		mListView = (ListView) findViewById(R.id.arrayList);
+		mListView.setAdapter(new IngooAdapter(this));
+		
+		mMainHandler = new MainHandler();
+		mThreadPool = ThreadPool.getThreadPool();
+		Log.d("onCreate mMainHandler & mThreadPool: ",
+						mMainHandler + " " + mThreadPool);
 		initializeData();
-		setupViews();
 		LogTime.logTimeMsg("onCreate ", startTime);
 		//AppUtil.buildSystemInfo(this);
 	}
 
 	private void initializeData() {
-		mSyncHandler = new SyncHandler();
-		mThreadPool = ThreadPool.getThreadPool();
-		
 		mThreadPool.execute(new Runnable() {
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
+				
 				Log.d(TAG, "<run> APP_VERSION: " + IngooHelper.APP_VERSION);
 			}
 		});
 	}
 	
-	private void setupViews() {
-		mButton1 = (Button) findViewById(R.id.item_test2);
+	@Override
+	protected void onResume() {
+		super.onResume();
 	}
 
 	@Override
@@ -92,23 +99,5 @@ public class IngooActivity extends Activity implements OnClickListener {
 	public void updateData() {
 		Log.d(TAG, "<updateData>");
 		
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		//mSyncHandler.sendEmptyMessage(IngooHelper.MSG_ERROR);
-	}
-
-	@Override
-	public void onClick(View view) {
-		Log.d(TAG, "<onClick> view: " + view);
-		if (view == mButton1) {
-			Toast toast = Toast.makeText(this, "…Ë÷√≥…π¶", Toast.LENGTH_SHORT);
-			toast.setGravity(Gravity.CENTER, 0, 0);
-			toast.show();
-		} else {
-
-		}
 	}
 }
