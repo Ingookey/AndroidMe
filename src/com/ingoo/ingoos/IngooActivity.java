@@ -15,6 +15,8 @@ import com.ingoo.ingoos.thread.TestThread;
 import com.ingoo.ingoos.thread.ThreadPool;
 import com.ingoo.ingoos.utils.LogTime;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.concurrent.ThreadPoolExecutor;
 
 
@@ -101,14 +103,23 @@ public class IngooActivity extends Activity {
 				//TODO Need fix je
 				//AppUtil.buildSystemInfo(IngooActivity.this);
 				try {
-					Class classRef1 = UserInfo.class;
-					Class classRef2 = Class.forName("com.ingoo.ingoos.thread.UserInfo");
-					LogTime.logd(TAG, "<initializeData> classRef1 & classRef2: " +
-													    classRef1 + " " + classRef2);
+					Class<UserInfo> classRef1 = UserInfo.class;
+					Class<?> clazz = Class.forName("com.ingoo.ingoos.thread.UserInfo");
+					LogTime.logd(TAG, "<initializeData> classRef1 & clazz: " +
+													    classRef1 + " " + clazz);
+					Field field = clazz.getDeclaredField("mUserId");
+					Method method = clazz.getDeclaredMethod("getId", int.class);
+					LogTime.logd(TAG, "<initializeData> field & method: " +
+														field + " " + method);
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
+				} catch (NoSuchFieldException e) {
+					e.printStackTrace();
+				} catch (NoSuchMethodException e) {
+					e.printStackTrace();
+				} catch (SecurityException e) {
+					e.printStackTrace();
 				}
-				
 			}
 		});
 	}
