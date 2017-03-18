@@ -43,5 +43,15 @@ public final class LogTime {
 	public static void logTimeMsg(String msg, final long startTime) {
 		Log.d(TAG, msg + " costs: " + getElapsedMillis(startTime));
 	}
+	
+	/**
+	 * Print log for both of eclipse and logcat.
+	 * @param Tag tag
+	 * @param message log message
+	 */
+	public static void logd(final String Tag, final String message) {
+		System.out.println(message);
+		Log.d(Tag, message);
+	}
 }
 

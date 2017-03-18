@@ -1,6 +1,7 @@
 package com.ingoo.ingoos;
 
 import android.app.Activity;
+import android.content.Loader;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 
 import com.ingoo.ingoos.thread.TestThread;
 import com.ingoo.ingoos.thread.ThreadPool;
+import com.ingoo.ingoos.thread.UserInfo;
 import com.ingoo.ingoos.utils.AppUtil;
 import com.ingoo.ingoos.utils.LogTime;
 
@@ -99,6 +101,15 @@ public class IngooActivity extends Activity {
 				Log.d(TAG, "<run> System info: ");
 				//TODO Need fix je
 				//AppUtil.buildSystemInfo(IngooActivity.this);
+				try {
+					Class classRef1 = UserInfo.class;
+					Class classRef2 = Class.forName("com.ingoo.ingoos.thread.UserInfo");
+					LogTime.logd(TAG, "<initializeData> classRef1 & classRef2: " +
+													    classRef1 + " " + classRef2);
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				
 			}
 		});
 	}
