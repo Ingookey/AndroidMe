@@ -1,7 +1,12 @@
 /**
  * Descrption: Ingoo adapter.
  */
-package com.ingoo.ingoos;
+package com.ingoo.ingoos.data;
+
+import com.ingoo.ingoos.R;
+import com.ingoo.ingoos.R.drawable;
+import com.ingoo.ingoos.R.id;
+import com.ingoo.ingoos.R.layout;
 
 import java.util.ArrayList;
 import java.util.HashMap;

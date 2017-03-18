@@ -12,7 +12,7 @@ public final class LogTime {
 	private static String TAG = "ingoo/LogTime";
 	
 	private static final double MILLIS_MULTIPLIER = Build.VERSION_CODES.JELLY_BEAN_MR1 <= Build.VERSION.SDK_INT
-													? 1d / Math.pow(10, 6) : 1d;
+								? 1d / Math.pow(10, 6) : 1d;
 
 	private LogTime() {
 	}
@@ -32,9 +32,7 @@ public final class LogTime {
 
 	/**
 	 * Returns the time elapsed since the given logTime in millisecond.
-	 * 
-	 * @param logTime
-	 *            The start time of the event.
+	 * @param logTime the start time of the event.
 	 */
 	public static double getElapsedMillis(long logTime) {
 		return (getLogTime() - logTime) * MILLIS_MULTIPLIER;
@@ -49,9 +47,10 @@ public final class LogTime {
 	 * @param Tag tag
 	 * @param message log message
 	 */
-	public static void logd(final String Tag, final String message) {
+	public static void logd(final String tag, final String message) {
 		System.out.println(message);
-		Log.d(Tag, message);
+		// For android log
+		Log.d(tag, message);
 	}
 }
 

@@ -1,22 +1,31 @@
-package com.ingoo.ingoos.thread;
+package com.ingoo.ingoos.data;
 
 public class UserInfo {
-
-	public UserInfo() {
-	}
-
+	private static String TAG = "ingoo/UserInfo";
+	
 	private int mUserId;
 	private String mUserName;
-	private int age;
-	private String pwd;
+	private int mAge;
+	private String mPwd;
+	
+	public UserInfo(int userId, String userName) {
+		this(userId, userName, 0, null);
+	}
+
+	public UserInfo(int userId, String userName, int userAge, String userPwd) {
+		this.mUserId = userId;
+		this.mUserName = userName;
+		this.mAge = userAge;
+		this.mPwd = userPwd;
+	}
 
 	@Override
 	public String toString() {
 		return "UserInfo:" +
 				"mUserId: " + mUserId +
 				"mUserName: " + mUserName +
-				", pwd=" + pwd +
-				", age=" + age + "]";
+				", pwd=" + mPwd +
+				", age=" + mAge + "]";
 	}
 
 	public int getId() {
@@ -36,19 +45,19 @@ public class UserInfo {
 	}
 
 	public String getPwd() {
-		return pwd;
+		return mPwd;
 	}
 
 	public void setPwd(String pwd) {
-		this.pwd = pwd;
+		this.mPwd = pwd;
 	}
 
 	public int getAge() {
-		return age;
+		return mAge;
 	}
 
 	public void setAge(int age) {
-		this.age = age;
+		this.mAge = age;
 	}
 
 }
