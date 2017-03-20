@@ -1,5 +1,6 @@
 package com.ingoo.ingoos;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,7 +34,7 @@ public class IngooActivity extends Activity {
 	public class MainHandler extends Handler {
 	    @Override
 	    public void handleMessage(Message msg) {
-			Log.d(TAG, "<handleMessage> msg.what: " + msg.what);
+			LogTime.logd(TAG, "<handleMessage> msg.what: " + msg.what);
 	        super.handleMessage(msg);
 	        switch (msg.what) {
 			case IngooHelper.MSG_UPDATE_DATA:
@@ -49,7 +50,7 @@ public class IngooActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.d(TAG, "<onCreate> APP_VERSION: " + IngooHelper.APP_VERSION);
+		LogTime.logd(TAG, "<onCreate> APP_VERSION: " + IngooHelper.APP_VERSION);
 
 		long startTime = LogTime.getLogTime();
 		setContentView(R.layout.ingoo_outlook);
@@ -93,20 +94,22 @@ public class IngooActivity extends Activity {
 	private void initializeData() {
 		mMainHandler = new MainHandler();
 		mThreadPool = ThreadPool.getThreadPool();
-		Log.d("onCreate mMainHandler & mThreadPool: ",
-						mMainHandler + " " + mThreadPool);
+		LogTime.logd("onCreate mMainHandler & mThreadPool: ",
+							   mMainHandler + " " + mThreadPool);
+		ActionBar bar = getActionBar();
+		bar.setDisplayHomeAsUpEnabled(true);
 		
 		mThreadPool.execute(new Runnable() {
 			@Override
 			public void run() {
-				Log.d(TAG, "<run> System info: ");
+				LogTime.logd(TAG, "<run> System info: ");
 				//TODO Need fix je
 				//AppUtil.buildSystemInfo(IngooActivity.this);
 				try {
-					Class<UserInfo> classRef1 = UserInfo.class;
+					//Class<UserInfo> classRef1 = UserInfo.class;
 					Class<?> clazz = Class.forName("com.ingoo.ingoos.thread.UserInfo");
 					LogTime.logd(TAG, "<initializeData> classRef1 & clazz: " +
-													    classRef1 + " " + clazz);
+													    " " + clazz);
 					Field field = clazz.getDeclaredField("mUserId");
 					Method method = clazz.getDeclaredMethod("getId", int.class);
 					LogTime.logd(TAG, "<initializeData> field & method: " +
