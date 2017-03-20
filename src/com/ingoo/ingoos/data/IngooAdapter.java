@@ -7,6 +7,7 @@ import com.ingoo.ingoos.R;
 import com.ingoo.ingoos.R.drawable;
 import com.ingoo.ingoos.R.id;
 import com.ingoo.ingoos.R.layout;
+import com.ingoo.ingoos.utils.LogTime;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -75,7 +76,7 @@ public class IngooAdapter extends BaseAdapter implements OnClickListener {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		Log.d(TAG, "<getView> viewHolder: " + viewHolder);
+		LogTime.logd(TAG, "<getView> viewHolder: " + viewHolder);
 		viewHolder.img.setBackgroundResource((Integer) getData().get(position).get("image"));
 		viewHolder.title.setText((CharSequence) getData().get(position).get("title"));
 		viewHolder.info.setText((CharSequence) getData().get(position).get("info"));
